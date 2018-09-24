@@ -10,7 +10,7 @@ else
     drush -y -vvv site-install minimal --db-url=mysql://user:password@localhost:3306/
     #set uui to marqueblanche
     drush -y config-set "system.site" uuid "##################################"
-    #delete shortcut bloquing cim
+    #delete shortcut blocking cim
     drush ev '\Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();'
 fi
 drush cim -y -v
